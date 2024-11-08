@@ -2,7 +2,7 @@ import os
 import json
 import requests
 
-def lambda_handler(event):
+def lambda_handler(event, context):
     issueURL = event.get("issue", {}).get("html_url", "No URL")
 
     payload = json.dumps({"text": f"Issue Created: {issueURL}"})
